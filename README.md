@@ -21,7 +21,9 @@ This repository host image filtering microservice code.
 - Endpoint to filter an image from a public url.  
 `filteredimage?image_url=<pass a image url>`
   - `image_url` URL of a publicly accessible image
-  - RETURNS: the filtered image file
+  - Responses: 
+    - `200`: the filtered image file
+    - `422`: error message 
 
 ### Deploying your system
 
@@ -38,13 +40,15 @@ To deploy the microservice using AWS Elastic Beanstalk follow the process:
 2. Run `npm run build`
 3. Rub `eb create` to create a new environment to deploy your image-filter service.
    - Use dev environment
-   - loadbalancer type `application`
+   - load balancer type `application`
 4. Use `eb deploy` to push changes.
 
 ![EB-Capture](deployment_screenshots/capture.png)
 
+### Test Domain Name
+
+[http://udagram-amagnani-imagefiltering-dev.us-east-2.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg](http://udagram-amagnani-imagefiltering-dev.us-east-2.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg)
+
 ### Custom Domain Name
 
-//TODO
-Add your own domain name and have it point to the running services (try adding a subdomain name to point to the processing server)
-> !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
+[http://imagefiltering.alemag1986.com](http://imagefiltering.alemag1986.com)
