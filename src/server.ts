@@ -36,7 +36,7 @@ import { filterImageFromURL, deleteLocalFiles, validateURL } from './util/util';
     }
     let filteredpath: string;
     //2. call filterImageFromURL(image_url) to filter the image
-    filteredpath = await filterImageFromURL(image_url).catch(() => { console.log('Error'); return ''; });
+    filteredpath = await filterImageFromURL(image_url);
     //3. send the resulting file in the response
     return res.status(200).sendFile(filteredpath, async () => {
       //4. deletes any files on the server on finish of the response
