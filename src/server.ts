@@ -22,11 +22,11 @@ import { filterImageFromURL, deleteLocalFiles, validateURL } from './util/util';
   });
 
   // GET /filteredimage?image_url={{URL}}
-  // endpoint to filter an image from a public url.  
+  // Endpoint to filter an image from a public url.  
   // QUERY PARAMATERS
   //    image_url: URL of a publicly accessible image
   // RETURNS
-  //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
+  //   the filtered image file
   app.get("/filteredimage", async (req: Request, res: Response) => {
 
     //1. validate the image_url query
